@@ -1,0 +1,9 @@
+2025-11-20 19:53:57,457 - INFO - Google DNS: {'status': 'up', 'latency': 9.12}
+2025-11-20 19:53:57,458 - INFO - Cloudflare DNS: {'status': 'up', 'latency': 3.25}
+2025-11-20 19:53:57,458 - INFO - GitHub: {'status': 'up', 'latency': 23.22}
+2025-11-20 19:54:05,982 - INFO - Google DNS: {'status': 'up', 'latency': 9.03}
+2025-11-20 19:54:05,983 - INFO - Cloudflare DNS: {'status': 'up', 'latency': 2.28}
+2025-11-20 19:54:05,983 - INFO - GitHub: {'status': 'up', 'latency': 22.98}
+2025-11-20 19:55:48,029 - INFO - Google DNS: {'status': 'up', 'latency': 9.14}
+2025-11-20 19:55:48,029 - INFO - Cloudflare DNS: {'status': 'up', 'latency': 3.29}
+2025-11-20 19:55:48,031 - INFO - GitHub: {'status': 'up', 'latency': 22.85}

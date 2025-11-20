@@ -1,0 +1,14 @@
+{
+    "Google DNS": {
+        "status": "up",
+        "latency": 9.08
+    },
+    "Cloudflare DNS": {
+        "status": "up",
+        "latency": 3.27
+    },
+    "GitHub": {
+        "status": "up",
+        "latency": 23.75
+    }
+}
