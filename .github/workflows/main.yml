@@ -20,7 +20,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run network monitor
-        run: python framework_monitor.py
+        run: python monitor.py
 
       - name: Upload results
         uses: actions/upload-artifact@v3
