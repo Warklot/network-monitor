@@ -1,4 +1,4 @@
-name: Network Monitor
+name: Network Monitor CI/CD
 
 on:
   push:
@@ -10,11 +10,20 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
+
       - name: Install dependencies
         run: pip install -r requirements.txt
+
       - name: Run network monitor
-        run: python monitor.py
+        run: python framework_monitor.py
+
+      - name: Upload results
+        uses: actions/upload-artifact@v3
+        with:
+          name: network-results
+          path: network_results.json
