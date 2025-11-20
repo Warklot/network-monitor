@@ -16,7 +16,7 @@ class Device:
     def check_health(self):
         response = ping(self.ip, timeout=2)
         if response is None:
-            return {"status": "down", "latency": None}
+            return {"statsus": "down", "latency": None}
         return {"status": "up", "latency": round(response * 1000, 2)}
 
 class NetworkMonitor:
