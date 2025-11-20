@@ -1,8 +1,8 @@
+# monitor.py
 import json
 import logging
-import os
-import random
 from ping3 import ping
+import random, os
 
 logging.basicConfig(
     filename="network_monitor.log",
@@ -16,13 +16,9 @@ class Device:
         self.ip = ip
 
     def check_health(self):
-        # Simulate ping if running in GitHub Actions
         if os.getenv("CI") == "true":
-            return {
-                "status": random.choice(["up", "down"]),
-                "latency": round(random.uniform(10, 50), 2)
-            }
-        # Local environment: real ping
+            return {"status": random.choice(["up", "down"]),
+                    "latency": round(random.uniform(10, 50), 2)}
         response = ping(self.ip, timeout=2)
         if response is None:
             return {"status": "down", "latency": None}
@@ -42,16 +38,3 @@ class NetworkMonitor:
         results = self.run_checks()
         for device, data in results.items():
             logging.info(f"{device}: {data}")
-        # Save JSON output for later review
-        with open(filename, "w") as f:
-            json.dump(results, f, indent=4)
-        print(f"Results saved to {filename}")
-
-if __name__ == "__main__":
-    devices = [
-        Device("Google DNS", "8.8.8.8"),
-        Device("Cloudflare DNS", "1.1.1.1"),
-        Device("GitHub", "github.com")
-    ]
-    monitor = NetworkMonitor(devices)
-    monitor.save_results()
